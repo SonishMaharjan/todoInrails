@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  description: MyText
+  created_at: 2019-09-17 12:48:38
+  status: false
+  time_required: 2019-09-17 12:48:38
+
+two:
+  task: MyString
+  description: MyText
+  created_at: 2019-09-17 12:48:38
+  status: false
+  time_required: 2019-09-17 12:48:38
