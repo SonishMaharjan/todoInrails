@@ -1,23 +1,39 @@
-<h3>Listing all Todos</h3>
+<h3>Todo home page</h3>
 
-<table border="1">
-  <tr>
-    <th>Task Name</th>
-    <th>Description </th>
-    <th></th>
-  </tr>
- 
-  <% @todos.each do |todo| %>
-    <tr>
-      <td><%= todo.task_name %></td>
-      <td><%= todo.description %></td>
-      <td><%= link_to 'Show', todo_path(todo) %></td>
-      <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-      <td><%= link_to 'Delete', todo_path(todo), method: :delete, data: { confirm: 'Are you sure?'} %></td>
+  <div class="row">
+    <div class="col-md-6">
+      <%= render 'form' %>
+
+    </div>
+    <div class="col-md-6">
+
+        
+        
+        <% @todos.each do |todo| %>
+          <div class="card">
+            <h5 class="card-header"><%= todo.task_name %></h5>
+            <div class="card-body">
+              <p class="card-text"><%= todo.description %></p>
+              
+              <%= link_to 'Show', todo_path(todo), class: 'btn btn-default' %>
+              <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-primary' %>
+              <%= link_to 'Delete', todo_path(todo), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-warning' %>
+            </div>
+          </div>
+
+        <% end %>
+
+    
+     
+       
       
-    </tr>
-  <% end %>
-</table>
+    
+
+    </div>
+
+  </div>
+
+
 
 <%= link_to 'Home', root_path%>
 

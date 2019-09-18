@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'about' => 'pages#about'
   
-  resources :todos
+  resources :todos do
+    resources :comments
+  end
 end

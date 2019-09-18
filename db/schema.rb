@@ -10,18 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_070338) do
+ActiveRecord::Schema.define(version: 2019_09_18_065149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "todos", force: :cascade do |t|
-    t.string "task"
-    t.text "description"
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.bigint "todo_id"
     t.datetime "created_at", null: false
-    t.boolean "status"
-    t.time "time_required"
     t.datetime "updated_at", null: false
+    t.index ["todo_id"], name: "index_comments_on_todo_id"
   end
 
+# Could not dump table "todos" because of following StandardError
+#   Unknown type 'todo_adjustment' for column 'todo_status'
+
+  add_foreign_key "comments", "todos"
 end

@@ -1,0 +1,13 @@
+<%= form_with(model: [ @todo, @todo.comments.build ], local: true, class: 'form-group') do |form| %>
+    <p> 
+        <%= form.label :commenter %>
+        <%= form.text_field :commenter, class: 'form-control'  %>
+    </p>
+    <p>
+        <%= form.label :body %>
+        <%= form.text_area :body, class: 'form-control' %>
+    </p>
+    <p>
+        <%= form.submit class: 'btn btn-primary btn-sm' %>
+    </p>
+  <% end %>

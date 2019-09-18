@@ -1,13 +1,33 @@
 
-<p>
-  <strong>Task Name:</strong>
-  <%= @todo.task_name %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @todo.description %>
-</p>
+ <div class="card">
+    <h5 class="card-header">
+       <strong>Task:</strong>
+       <%= @todo.task_name %>
+    </h5>
+    <div class="card-body">
+     <strong>Description:</strong>
+      <%= @todo.description %>
+      
+     
+    </div>
 
+    <div class="card-footer">
+       <%= link_to 'Edit', edit_todo_path(@todo), class: 'btn btn-primary btn-sm' %>
+       <%= link_to 'Delete', todo_path(@todo), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-warning btn-sm' %>
+    </div>
+</div>
+
+<p>
+Add Comments:
+<p>
+
+<%= render 'comments/form' %>
+
+<p>Comments<p>
+
+
+<%= render @todo.comments %>
+ 
 <%= link_to 'Back', todos_path %>
 <%= link_to 'Edit', edit_todo_path %>
+

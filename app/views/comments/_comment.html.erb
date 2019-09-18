@@ -1,0 +1,18 @@
+ <li class="list-group-item">
+  
+  
+  <p>
+    <%= comment.body %>
+  </p>
+
+  <p>
+   By: <%= comment.commenter %>
+  </p>
+
+  <p>
+      <%= link_to 'Delete', [comment.todo, comment ], method: :delete, data: {confirm: 'Delete comment?'} %>
+      
+  </p>
+ 
+ </li>
+
