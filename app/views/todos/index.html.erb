@@ -1,4 +1,4 @@
-<h3>Listing all articles</h3>
+<h3>Listing all Todos</h3>
 
 <table border="1">
   <tr>
@@ -13,6 +13,8 @@
       <td><%= todo.description %></td>
       <td><%= link_to 'Show', todo_path(todo) %></td>
       <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+      <td><%= link_to 'Delete', todo_path(todo), method: :delete, data: { confirm: 'Are you sure?'} %></td>
+      
     </tr>
   <% end %>
 </table>

@@ -40,6 +40,13 @@ class TodosController < ApplicationController
         # render html: '<h1> htte1</h1>'.html_safe
     end
 
+    def destroy
+        @todo = Todo.find(params[:id])
+        @todo.destroy
+
+        redirect_to todos_path
+    end
+
     private
     def todo_params
         params.require(:todo).permit(:task_name,:description)
